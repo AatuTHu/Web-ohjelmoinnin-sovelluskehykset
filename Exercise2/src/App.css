@@ -1,0 +1,25 @@
+.container{
+  width: 500px;
+  margin: 50px;
+  padding: 50px;
+  border: 1px solid black;
+}
+
+.containerItems{
+  background-color: pink;
+  font-size: 30px;
+  border: 2px solid black;
+  padding:20px;
+}
+
+.Title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.itemButtons{
+  font-size: 15px;
+  border: 5px solid black;
+  padding:20px;
+}
