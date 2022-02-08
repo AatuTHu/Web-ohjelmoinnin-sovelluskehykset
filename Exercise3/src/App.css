@@ -12,6 +12,12 @@
   justify-content: center;
   align-items: center;
   min-width: 200px;
+  cursor: pointer;
+}
+
+.containerItemsDesc{
+  font-size: 15px;
+  color: rgba(67, 67, 255, 0.753);
 }
 
 .containerItems img {

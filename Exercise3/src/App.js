@@ -19,15 +19,15 @@ import one from './one.png'
 function App() {
 
     const [ productlist, setproductlist ] = useState([
-        {img: toaster ,name: 'AatuOY:n Leivänpaahdin',price: 83.99, rating: five},
-        {img: vedenkeitin ,name: 'Smegin Vedenkeitin',price: 120, rating: four},
-        {img: paristo ,name: 'Energizerin AA sormiparistot',price: 5.99, rating: five},
-        {img: valaisin ,name: 'Tää on valaisin',price: 26, rating: one},
-        {img: langatonhiiri ,name: 'Logitech langatonhiiri',price: 55, rating: five},
-        {img: rengas ,name: 'Kuminen rengas',price: 230, rating:five}, 
-        {img: puhelin ,name: 'Nokia 3310',price: 79.99, rating: four},
-        {img: kahvinkeitin ,name: 'Kahvinkeitin',price: 3200, rating: five},
-        {img: vatkain ,name: 'Joku vatkain',price: 1, rating: one },   
+        {img: toaster ,name: 'AatuOY:n Leivänpaahdin',description: "Tekniikan uusin ja tehokkain leivänpaahdin!",price: 83.99, rating: five},
+        {img: vedenkeitin ,name: 'Smegin Vedenkeitin',description: "tää keittää vettä kai",price: 120, rating: four},
+        {img: paristo ,name: 'Energizerin AA sormiparistot',description: "obsolete",price: 5.99, rating: five},
+        {img: valaisin ,name: 'Tää on valaisin',description: "valoa kansalle joka piemydessä vaeltaa",price: 26, rating: one},
+        {img: langatonhiiri ,name: 'Logitech langatonhiiri',description: "hiiri",price: 55, rating: five},
+        {img: rengas ,name: 'Kuminen rengas',description: "katuojasta varastettu",price: 230, rating:five}, 
+        {img: puhelin ,name: 'Nokia 3310',description: "tuhoutumatonta tavaraa",price: 79.99, rating: four},
+        {img: kahvinkeitin ,name: 'Kahvinkeitin',description: "tää keittää kahvia kai",price: 3200, rating: five},
+        {img: vatkain ,name: 'Joku vatkain',description: "ei mitä *i**ua",price: 1, rating: one },   
     ]);
 
    
@@ -35,7 +35,7 @@ function App() {
     <div className="App"> 
       <Searchbar/>
         <div className ="productContainer">
-          {productlist.map(p => <Productlist img={p.img} name={p.name} price={p.price} rating={p.rating}/>) }
+          {productlist.map(p => <Productlist img={p.img} name={p.name} description={p.description} price={p.price} rating={p.rating}/>) }
       </div>
     </div>
   );
