@@ -1,3 +1,8 @@
+.mainContainer{
+  display : flex;
+  justify-content: center;
+}
+
 .container{
   width: 500px;
   margin: 50px;
