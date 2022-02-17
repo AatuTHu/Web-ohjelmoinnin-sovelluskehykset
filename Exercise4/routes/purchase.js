@@ -33,6 +33,16 @@ router.get('/:id', (req, res) => {
 
 })
 
+router.post('/', (req, res) => {
+    purchase.push({
+        id: uuidv4(),
+        name: req.body.name,
+        bought_items: req.body.bought_items,
+        total_sum: req.body.total_sum,
+    });
+    res.sendStatus(201);
+});
+
 
 router.delete('/:id', (req, res) => {
 
