@@ -30,10 +30,22 @@ function App() {
         {img: vatkain ,name: 'Joku vatkain',description: "ei mitä *i**ua",price: 1, rating: one },   
     ]);
 
+    const priceDES = () => {
+      let sortedDES = [...productlist];
+      sortedDES.sort((a,b)=>{
+
+        if(a.price > b.price) return -1;
+        
+        if(a.price < b.price) return 1;
+        
+      })
+        setproductlist(sortedDES)
+    }
    
+
   return (
-    <div className="App"> 
-      <Searchbar/>
+    <div className="App">
+      <Searchbar clickMe = {priceDES}/>
         <div className ="productContainer">
           {productlist.map(p => <Productlist img={p.img} name={p.name} description={p.description} price={p.price} rating={p.rating}/>) }
       </div>

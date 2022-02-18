@@ -44,6 +44,6 @@
 
 .searchButton {
   font-size: 15px;
-  border: 5px solid black;
-  padding:20px;
+  border: 1px solid black;
+  margin-left: 10px;
 }
