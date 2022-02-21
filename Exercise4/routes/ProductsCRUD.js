@@ -13,7 +13,7 @@ const products = [
     name:"Example product",
     manufacturer:"BiC",
     category:"Outdoor",
-    description:"hard coded product for testing purposes",
+    description:"only for showing",
     price: x
     }
 ];

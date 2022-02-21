@@ -1,22 +1,23 @@
-const express = require('express');
 const bodyParser = require('body-parser');
-const app = express()
-const port = 3000
+const cors = require('cors');
 
-const shopProducts = require('./routes/shopProducts')
-const user = require('./routes/user')
-const purchase = require('./routes/purchase')
+const express = require('express')
+const app = express()
+const port = 3001
+
+
+
+const productsRouter = require('./routes/ProductsCRUD')
+const usersRouter = require('./routes/Users')
+const invoiceRouter = require('./routes/Invoice')
 
 app.use(bodyParser.json());
+app.use(cors())
 
-app.get('/', (req, res) => {
-    res.send('Hello world')
-})
-
-app.use('/shopProducts', shopProducts)
-app.use('/user', user)
-app.use('/purchase', purchase)
+app.use('/products',productsRouter)
+app.use('/users',usersRouter)
+app.use('/invoice',invoiceRouter)
 
 app.listen(port, () => {
-    console.log(`listening on port ${port}`)
+  console.log(`Example app listening on port ${port}`)
 })
