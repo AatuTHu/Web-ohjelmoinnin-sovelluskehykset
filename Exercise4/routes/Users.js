@@ -2,22 +2,20 @@ const express = require('express');
 const router = express.Router();
 const { v4: uuidv4 } = require('uuid');
 
-const users = [
+const users = [ //don't ask it's private
     { 
         id: uuidv4(),
-        forename:"Riku",
-        surname:"Rantala",
-        email:"Riku.Rantala@Oamk.com"
+        forename:"Ralli",
+        surname:"Raita",
+        email:"Raitapaita@rantakalu.com"
     }
 ];
-let customer = users[0].forename;
-exports.customer = customer;
 
-router.get('/', (req, res) => {
+router.get('/', (req, res) => { // get users
     res.json(users);
 })
 
-router.post('/', (req, res) => {
+router.post('/', (req, res) => { // post users
     console.log(req.body);
 
     users.push({ 

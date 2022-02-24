@@ -6,7 +6,7 @@ const { v4: uuidv4 } = require('uuid');
 
 let x = 1000
 
-const products = [
+const products = [ //one example
     {
     id: uuidv4(),
     img: "https://dummyjson.com/image/i/products/1/thumbnail.jpg",

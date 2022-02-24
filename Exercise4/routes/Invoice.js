@@ -1,26 +1,24 @@
 const express = require('express');
 const router = express.Router();
-let customer = ('./Users');
-let product = ('./ProductsCRUD');
 const { v4: uuidv4 } = require('uuid');
 
 
 
 
-const invoice = [
+const invoice = [ //one example
     { 
       id: uuidv4(),
-      "customer" : customer[0],  
-      "product" : product[0],
-      "sum":"" 
+      "customer" : "Aatu",  
+      "product" : "Toaster",
+      "sum": 200 
     }
   ];
-  console.log(customer);
-  router.get('/', (req, res) => {
+
+  router.get('/', (req, res) => { //get alllll
     res.json(invoice);
   })
   
-  router.get('/:id', (req, res) => {
+  router.get('/:id', (req, res) => { //get one
     const foundIndex = invoice.findIndex(t => t.id === req.params.id);
   
     if(foundIndex === -1){
@@ -30,7 +28,7 @@ const invoice = [
     }
   })
 
-  router.post('/',(req, res) => {  
+  router.post('/',(req, res) => {  //make incvoice
     console.log(req.body);
 
     invoice.push({
@@ -42,7 +40,7 @@ const invoice = [
     res.sendStatus(201);
 })
   
-  router.delete('/:invoiceId', (req, res) => {
+  router.delete('/:invoiceId', (req, res) => { //delete invoice
     const foundIndex = invoice.findIndex(t => t.id == req.params.invoiceId);
   
     if(foundIndex === -1){

@@ -13,6 +13,7 @@
   align-items: center;
   min-width: 200px;
   cursor: pointer;
+  background-color: rgb(172, 172, 172);
 }
 
 .containerItemsDesc{
@@ -27,6 +28,7 @@
 
 .searchBarContainer{
   display: flex;
+  justify-content: center;
   background-color: rgb(71, 2, 2);
 }
 
@@ -41,5 +43,7 @@
 .searchButton {
   font-size: 15px;
   border: 1px solid black;
+  background-color: rgb(33, 66, 33);
   margin-left: 10px;
+  margin-right: 10px;
 }

@@ -22,7 +22,6 @@ img {
   padding: 6px;
   }
 
-
 .flex-item{
   text-align: center;
   line-height: 50px;
@@ -35,6 +34,7 @@ img {
 }
 
 .SubscribeButton {
+  cursor: pointer;
   color: rgb(0, 0, 0);
   border:2px rgb(0, 0, 0) solid;
   border-radius: 25px;
@@ -42,11 +42,13 @@ img {
 }
 
 .OptionsButton {
+  cursor: pointer;
   border: 3px rgb(255, 255, 255) solid;
   background: rgb(4, 4, 117)
 }
 
 .Title {
+  cursor: pointer;
   text-align: center;
   font-style: oblique;
   font-size: 30px;
@@ -58,6 +60,7 @@ img {
 }
 
 .flex-breakingnews {
+  cursor: pointer;
   display: flex;
   background-color: rgb(0, 138, 143);
   line-height: 50px;
@@ -93,7 +96,7 @@ img {
   border-top: 2px solid black;
   border-right: 2px solid rgb(134, 133, 133);
   background-color: white;
-
+  
 }
 
 .News-item{
@@ -114,6 +117,7 @@ img {
 }
 
 .sidebar-items{
+  cursor: pointer;
   margin-top: 50px;
   font-size: 25px;
   font-family: "Times New Roman", Times, serif;

@@ -3,18 +3,18 @@ import Searchbar from './components/Searchbar'
 import React from "react";
 import { useState } from "react";
 import './App.css';
-import toaster from './toaster.png'
-import vedenkeitin from './vedenkeitin.png'
-import paristo from './paristo.png'
-import valaisin from './valaisin.png'
-import langatonhiiri from './langatonhiiri.png'
-import rengas from './rengas.png'
-import puhelin from './puhelin.png'
-import kahvinkeitin from './kahvinkeitin.png'
-import vatkain from './vatkain.png'
-import five from './five.png'
-import four from './four.png'
-import one from './one.png'
+import toaster from './images/toaster.png'
+import vedenkeitin from './images/vedenkeitin.png'
+import paristo from './images/paristo.png'
+import valaisin from './images/valaisin.png'
+import langatonhiiri from './images/langatonhiiri.png'
+import rengas from './images/rengas.png'
+import puhelin from './images/puhelin.png'
+import kahvinkeitin from './images/kahvinkeitin.png'
+import vatkain from './images/vatkain.png'
+import five from './images/five.png'
+import four from './images/four.png'
+import one from './images/one.png'
 
 function App() {
 
@@ -51,11 +51,31 @@ function App() {
       })
         setproductlist(sortedASC)
     }
+
+    const nameASC = () => {
+      let alphaASC = [...productlist]; //toimii
+      alphaASC.sort((a,b)=>{
+        let x = a.name.toUpperCase(),
+        y = b.name.toUpperCase();
+        return x === y ? 0 : x > y ? 1 : -1;
+      })
+      setproductlist(alphaASC)
+    }
+      
+    const nameDES = () => {
+      let alphaDES = [...productlist]; 
+      alphaDES.sort((a,b)=>{   
+        let x = a.name.toUpperCase(), 
+        y = b.name.toUpperCase();
+        return x === y ? 0 : x > y ? -1 : 1;
+      })
+      setproductlist(alphaDES)
+    }
  
 
   return (
     <div className="App">
-      <Searchbar clickDes = {priceDES} clickAsc = {priceASC} />
+      <Searchbar priceDes = {priceDES} priceAsc = {priceASC} nameAsc = {nameASC} nameDes = {nameDES} />
         <div className ="productContainer">
           {productlist.map(p => <Productlist img={p.img} name={p.name} description={p.description} price={p.price} rating={p.rating}/>) }
       </div>

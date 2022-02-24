@@ -35,7 +35,6 @@ function App() {
     }
 
     const [ dummyList, setdummyList  ] = useState([]);
-
     let random = Math.floor(Math.random() *30)
 
 
@@ -45,9 +44,7 @@ function App() {
       let result = newDummyList.findIndex(i => i.id === id)
       console.log(result)
 
-
       if(result == -1) {
-
         let newDummylist = [...dummyList, {
 
           id : id,
@@ -56,14 +53,14 @@ function App() {
 
         }];
         setdummyList(newDummylist);
-      } else {
-        let additions = {...newDummyList[result]}
+        } else {
+          let additions = {...newDummyList[result]}
           additions.qty= additions.qty + random;
           newDummyList[result] = additions;
           setdummyList(newDummyList);
-      }
+        }
 
-      }
+    }
 
     
     
