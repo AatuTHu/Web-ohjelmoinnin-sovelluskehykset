@@ -7,11 +7,11 @@ import ProductListView from './components/ProductListView'
 
 function App() {
 
-  const [editorModeOn, setEditorModeOn] = useState(false);
-  const [products, setProducts] = useState([])
+  const [editorModeOn, setEditorModeOn] = useState(false); //editormode declaration
+  const [products, setProducts] = useState([]) //productlist declaration
 
   
-  useEffect(async() =>{
+  useEffect(async() =>{ //fetch items from backend api
     const result = await fetch('http://localhost:3001/products').then((res)=>
       res.json()
     )
@@ -19,7 +19,7 @@ function App() {
     console.log(result)
   }, [])
 
-  const createProduct = (item) => {
+  const createProduct = (item) => { //post new items to api
     fetch('http://localhost:3001/products', { method: 'POST', 
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -31,7 +31,7 @@ function App() {
     
   }
 
-  const onItemDelete = (item) => {
+  const onItemDelete = (item) => { //delete items from api
     let newProds = [...products];
     let deletedItem = newProds.find(p => p.id === item.id);
     let deletedItemIndex = newProds.findIndex(p => p.id === item.id);
@@ -40,7 +40,7 @@ function App() {
     setProducts(newProds);
   }
 
-  const priceASC = () => {
+  const priceASC = () => { //price ascend button
     const sortedASC = [...products];  
     sortedASC.sort((a,b)=>{       
       let x = parseInt(a.price), 
@@ -52,7 +52,7 @@ function App() {
       setProducts(sortedASC);
   }
 
-  const priceDES = () => {
+  const priceDES = () => { //price descend button
     let sortedDES = [...products];
     sortedDES.sort((a,b)=>{
       if(a.price > b.price) return -1;
@@ -62,7 +62,7 @@ function App() {
       setProducts(sortedDES); 
   }
 
-  let output = <ProductListView products={products} />;
+  let output = <ProductListView products={products} />; //switcher
   if( editorModeOn == true ) {
     output = <Editorview products={products} onItemDelete={ onItemDelete } createProduct = { createProduct }/>;
   }
@@ -70,11 +70,10 @@ function App() {
   return (
     <div>   
       <div className="topMenuContainer">
-                <Topmenu priceAsc = {priceASC} priceDes = {priceDES}/>   
+                <Topmenu priceAsc = {priceASC} priceDes = {priceDES}/>  
                 <button className="functionButtons" onClick={ () => setEditorModeOn(!editorModeOn)}>Admin Mode Toggle</button>       
                 </div>       
-                { output }
-             
+                { output }            
       </div>
   );
 }

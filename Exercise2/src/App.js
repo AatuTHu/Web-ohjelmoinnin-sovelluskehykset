@@ -10,7 +10,9 @@ import './App.css';
 
 function App() {
 
-    const [ shoppingListItems, setShoppingListItems  ] = useState([
+  let random = Math.floor(Math.random() *30)  //random number
+
+    const [ shoppingListItems, setShoppingListItems  ] = useState([  //original setup
         { id: 1, value: 'Hiivaa', qty: 0},
         { id: 2, value: 'Sokeria', qty: 0},
         { id: 3, value: 'Ämpäria', qty: 0},
@@ -18,10 +20,10 @@ function App() {
          
     ]);
 
+    const [ dummyList, setdummyList  ] = useState([]); //testlist setup, not necessaru for the task
 
-    const addlistitems = (id) => {
 
-      let random = Math.floor(Math.random() *30)
+    const addlistitems = (id) => {     //add random amount to qty on original list  
       let newShoppingListItems = [...shoppingListItems]
       let result = newShoppingListItems.findIndex(i => i.id === id)
 
@@ -34,17 +36,13 @@ function App() {
         }
     }
 
-    const [ dummyList, setdummyList  ] = useState([]);
-    let random = Math.floor(Math.random() *30)
-
-
-    const addDummies = (id, value, qty) => {
+    
+    const addDummies = (id, value, qty) => { //test list addition
 
       let newDummyList = [...dummyList]
       let result = newDummyList.findIndex(i => i.id === id)
-      console.log(result)
 
-      if(result == -1) {
+      if(result == -1) { //if there is no item on the list, then make it on given params
         let newDummylist = [...dummyList, {
 
           id : id,
@@ -53,7 +51,8 @@ function App() {
 
         }];
         setdummyList(newDummylist);
-        } else {
+
+        } else {  //cheks if there is already item on this index. If is then add to that qty
           let additions = {...newDummyList[result]}
           additions.qty= additions.qty + random;
           newDummyList[result] = additions;
@@ -66,16 +65,16 @@ function App() {
     
   return (
     <div className="App">
-      <div className="mainContainer">
+      <div className="mainContainer"> 
         <div className="container">
           <Title/>
-            <Shoppinglist listItems={shoppingListItems}/>
-          <Buttons clickMe={addlistitems}/>
+            <Shoppinglist listItems={shoppingListItems}/>   {/* Sending list to component ass a prop */}   
+          <Buttons clickMe={addlistitems}/>                  {/* List addition buttons */}   
         </div>
           <div className="container">
             <Dummytitle/>
-              <Dummylist dummyItems={dummyList}/>
-            <Dummybuttons dummyMe={addDummies}/>
+              <Dummylist dummyItems={dummyList}/> {/* Sending dummylist to component ass a prop */}
+            <Dummybuttons dummyMe={addDummies}/> {/* List addition buttons */}
           <div>press for more</div>
         </div>
       </div>

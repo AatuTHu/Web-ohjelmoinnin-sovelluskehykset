@@ -18,7 +18,7 @@ import one from './images/one.png'
 
 function App() {
 
-    const [ productlist, setproductlist ] = useState([
+    const [ productlist, setproductlist ] = useState([ //make list of items
         {img: toaster ,name: 'AatuOY:n Leivänpaahdin',description: "Tekniikan uusin ja tehokkain leivänpaahdin!",price: 83.99, rating: five},
         {img: vedenkeitin ,name: 'Smegin Vedenkeitin',description: "tää keittää vettä kai",price: 120, rating: four},
         {img: paristo ,name: 'Energizerin AA sormiparistot',description: "obsolete",price: 5.99, rating: five},
@@ -30,7 +30,7 @@ function App() {
         {img: vatkain ,name: 'Joku vatkain',description: "ei mitä *i**ua",price: 1, rating: one },   
     ]);
 
-    const priceDES = () => {
+    const priceDES = () => { //filter button for price for descend
       let sortedDES = [...productlist];
       sortedDES.sort((a,b)=>{
 
@@ -42,7 +42,7 @@ function App() {
         setproductlist(sortedDES)
     }
 
-    const priceASC = () => {
+    const priceASC = () => { //filter button for price ascend
       let sortedASC = [...productlist];
       sortedASC.sort((a,b)=>{
         if(a.price < b.price) return -1;
@@ -52,8 +52,8 @@ function App() {
         setproductlist(sortedASC)
     }
 
-    const nameASC = () => {
-      let alphaASC = [...productlist]; //toimii
+    const nameASC = () => { //alphabeticalSort ascend
+      let alphaASC = [...productlist];
       alphaASC.sort((a,b)=>{
         let x = a.name.toUpperCase(),
         y = b.name.toUpperCase();
@@ -62,7 +62,7 @@ function App() {
       setproductlist(alphaASC)
     }
       
-    const nameDES = () => {
+    const nameDES = () => { //alphabeticalSort descend
       let alphaDES = [...productlist]; 
       alphaDES.sort((a,b)=>{   
         let x = a.name.toUpperCase(), 
@@ -75,9 +75,9 @@ function App() {
 
   return (
     <div className="App">
-      <Searchbar priceDes = {priceDES} priceAsc = {priceASC} nameAsc = {nameASC} nameDes = {nameDES} />
+      <Searchbar priceDes = {priceDES} priceAsc = {priceASC} nameAsc = {nameASC} nameDes = {nameDES} />  {/* send filter functions to searchbar */}
         <div className ="productContainer">
-          {productlist.map(p => <Productlist img={p.img} name={p.name} description={p.description} price={p.price} rating={p.rating}/>) }
+          {productlist.map(p => <Productlist img={p.img} name={p.name} description={p.description} price={p.price} rating={p.rating}/>) } {/* list drawing */}
       </div>
     </div>
   );
