@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 
 
 
-let x = 1000
+
 
 const products = [
     {
@@ -12,21 +12,21 @@ const products = [
         img: "https://dummyjson.com/image/i/products/2/thumbnail.jpg",
         name:"Example product",
         description:"hard coded product for testing purposes",
-        price: x
+        price: 200
     }, 
     {
         id: uuidv4(),
         img: "https://dummyjson.com/image/i/products/3/thumbnail.jpg",
         name:"Example product",
         description:"hard coded product for testing purposes",
-        price: x
+        price: 300
     },
     {
         id: uuidv4(),
         img: "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
         name:"Example product",
         description:"hard coded product for testing purposes",
-        price: x
+        price: 400
     }
 ];
 

@@ -3,7 +3,7 @@ const cors = require('cors');
 
 const express = require('express')
 const app = express()
-const port = 3001
+const port = 3000
 
 const productsRouter = require('./routes/ProductsCRUD') 
 const usersRouter = require('./routes/Users')
